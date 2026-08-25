@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+<!--Конвертация в стринг-->
+console.log(typeof (100500+""));
+console.log(typeof (""+123123+222222))
+// Конвертация стринги в число
+console.log(+'123123123')
+// Создание NaN Not a Number
+console.log(+"123123asd")
+console.log(parseInt("123123asd"))
+// Приведение к boolean, только 0 и emptry string является при приведении false
+console.log(!!0)
+console.log(!!-100000)
+console.log(!!'asd')
+console.log(!!'')
+// булл в стринг
+console.log(true+'')
+console.log(+false)//0
+console.log(+true)//1
+</script>
+</body>
+</html>

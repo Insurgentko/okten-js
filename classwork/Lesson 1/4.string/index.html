@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    <!--Если внутри нужны одинарные кавычки, тогда снаружи должны быть двойные и наоборот-->
+    let a = '"asdasd"';
+    let b = "'asdasd'";
+    console.log(a, b);
+    // Бек квоты шаблонная строка
+    let greeting = 'hello';
+    let intro = 'my name vasya';
+    let msg = greeting + ' ' + intro
+    console.log(msg);
+    // `` — шаблонные строки (template literals), внутри них можно писать интерполяцию и в неё
+    // пихать regex (регулярные выражения)
+    // Интерполяция ${RegEx}
+    let msg2 = `${greeting} ${intro}`
+    console.log(msg2)
+</script>
+</body>
+</html>
