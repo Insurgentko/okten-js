@@ -8,13 +8,13 @@
 </head>
 <body>
 <script>
-    let x;
-    if (!x){
-        x = 'default';
-        console.log(x);
-    }else{
-        console.log(x);
+
+    let listOfItems = [`html`, `css`, `javascript`, `mysql`, `mongodb`, `react`, `angular`, `node.js`];
+    document.write(`<ul>`);
+    for (let item of listOfItems){
+        document.write(`<li>${item}</li>`);
     }
+    document.write(`</ul>`);
 </script>
 </body>
 </html>
