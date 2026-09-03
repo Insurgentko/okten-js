@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // function productsWriter(productTitle, lorem){
+    //     document.write(
+    //         `
+    //     <div>
+    //         <h2>${productTitle}</h2>
+    //         <p>${lorem}</p>
+    //     </div>
+    //     `
+    //     )
+    // }
+    //
+    // productsWriter('kartoshka', 'loremloremlorem')
+
+    function printerArray(arr){
+        for (const item of arr){
+            console.log(item);
+        }
+    }
+
+    let arr = [1,4,6,6,7,7,7,7,]
+    // printerArray(arr)
+
+    function userFactory(id, name, age, status){
+        return user = {
+            id: id,
+            name: name,
+            age: age,
+            status: status
+        }
+    }
+    let user1 = userFactory(1,'asd', 22, false)
+    console.log(user1)
+
+</script>
+</body>
+</html>

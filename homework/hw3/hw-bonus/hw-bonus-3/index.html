@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arrNum = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+    let arrStr = ['sd', 'as', 'gs', 'qe', 'uy', 'iu', '12', '76', '88', '10'];
+    let arrAll = [123, 'as', true, 31, 45, false, NaN, 'gs', 'qe', -100];
+    for (let i = 0; i<arrAll.length; i++){
+        console.log(arrAll[i]);
+    }
+    for (let i = 0; i<arrAll.length; i++){
+        if (typeof(arrAll[i])==="boolean") {
+            console.log(arrAll[i]);
+        }
+    }
+    for (let i = 0; i<arrAll.length; i++){
+        if (typeof(arrAll[i])==="number"&&!isNaN(arrAll[i])) {
+            console.log(arrAll[i]);
+        }
+    }
+    for (let i = 0; i<arrAll.length; i++){
+        if (typeof(arrAll[i])==="string") {
+            console.log(arrAll[i]);
+        }
+    }
+    //
+    // 1.
+    //
+    // while(w<=arr.length){
+    //     console.log(arr[w]);
+    //     w++;
+    // }
+    //
+    // 2.
+    //
+    // for (let i = 0; i<=arr.length; i++){
+    //     console.log(arr[i]);
+    // }
+    //
+    // 3.
+    //
+    // while(w<=arr.length){
+    //     if (w%2!==0) {
+    //         console.log(arr[w]);
+    //         w++;
+    //     }
+    // }
+    //
+    // 4.
+    //
+    // for (let i = 0; i<=arr.length; i++){
+    //     if (w%2!==0) {
+    //         console.log(arr[i]);
+    //     }
+    // }
+    //
+    // 5.
+    //
+    // while(w<=arr.length){
+    //     if (w%2===0) {
+    //         console.log(arr[w]);
+    //         w++;
+    //     }
+    // }
+    //
+    // 6.
+    //
+    // for (let i = 0; i<=arr.length; i++){
+    //     if (w%2===0) {
+    //         console.log(arr[i]);
+    //     }
+    // }
+    //
+    // 7.
+    //
+    // for (let i = 0; i<=arr.length; i++){
+    //     if (w%3===0) {
+    //         arr[i] = 'okten';
+    //     }
+    // }
+    //
+    // 8.
+    //
+    // for (let i = arr.length; i>=0; i--){
+    //     console.log(arr[i]);
+    // }
+    //
+    // 9.
+    //
+    // let i = arr.length, or w = arr.length + i-- or w--
+</script>
+</body>
+</html>
