@@ -9,11 +9,13 @@
 <body>
 <script>
 
-    function writeList(...args){
-
+    let a = (args) => {
+        document.write(`<ul>`)
+        for (let i = 0; i<args.length; i++){
+            document.write(`<li>${args[i]}</li>`)
+        }
+        document.write(`</ul>`)
     }
-
-    writeList('sadfadsf', 5,2,4,54,123,12,312,312,312,3,`123123123wfewfawef`,true,false)
 </script>
 </body>
 </html>

@@ -9,11 +9,16 @@
 <body>
 <script>
 
-    function writeList(...args){
-
+    let a = (arr) => {
+        for (let item of arr){
+            document.write(`<div>`)
+            for (let userInfo in item) {
+                document.write(`<p>${item[userInfo]}</p>`)
+            }
+            document.write(`</div>`)
+        }
     }
 
-    writeList('sadfadsf', 5,2,4,54,123,12,312,312,312,3,`123123123wfewfawef`,true,false)
 </script>
 </body>
 </html>

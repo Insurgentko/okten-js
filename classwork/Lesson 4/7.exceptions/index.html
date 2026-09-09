@@ -8,12 +8,20 @@
 </head>
 <body>
 <script>
+    // try {
+    //     return a / b;
+    // }catch (e){
+    //     console.log('НЕЛЬЗЯ ДЕЛИТЬ НА НОЛЬ ТУПИЦА')
+    // }finally {
+    //
+    // }
 
-    function writeList(...args){
-
+    function calc (a,b){
+        if (b===0){
+            throw new Error('b is equal 0')
+        }
+            return a/b
     }
-
-    writeList('sadfadsf', 5,2,4,54,123,12,312,312,312,3,`123123123wfewfawef`,true,false)
 </script>
 </body>
 </html>

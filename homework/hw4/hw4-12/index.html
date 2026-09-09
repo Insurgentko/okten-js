@@ -9,14 +9,11 @@
 <body>
 <script>
 
-    function swap(arr, index1, index2){
-        let value=arr[index1];
+    function swap (arr, index1, index2){
+        let temp = arr[index1];
         arr[index1] = arr[index2];
-        arr[index2] = value;
+        arr[index2] = temp;
     }
-    let arr = [1,5,54,36,456,346,6,3475,73,46341,26,6236,-1000,8]
-    swap(arr,0,1)
-    console.log(arr);
 </script>
 </body>
 </html>

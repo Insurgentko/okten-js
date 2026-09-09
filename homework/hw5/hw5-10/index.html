@@ -9,11 +9,16 @@
 <body>
 <script>
 
-    function writeList(...args){
-
+    let a = (arr) => {
+        let minimum=arr[0];
+        for (let item of arr){
+            if (item<minimum){
+                minimum=item;
+            }
+        }
+        return minimum;
     }
 
-    writeList('sadfadsf', 5,2,4,54,123,12,312,312,312,3,`123123123wfewfawef`,true,false)
 </script>
 </body>
 </html>

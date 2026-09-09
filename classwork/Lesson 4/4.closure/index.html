@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // function ad(){
+    //     let x=10;
+    //     function inner(){
+    //         return ++x; // локальная функция
+    //     }
+    //     return inner;
+    // }
+    // console.log(ad()())
+    //
+    // let user = {
+    //     name: 'asd',
+    //     age: 15
+    // };
+    // user.age = -15000;
+
+    function userBuilder(name,age){
+        let user = {
+            name, age
+        }
+        return {
+            getName() {
+                return user.name;
+            },
+            getAge(){
+                return user.age;
+            },
+            setAge(){
+                if(age>0){
+                    user.age = age;
+                }
+            }
+        }
+    }
+    let builder = userBuilder('vasya',31);
+    console.log(builder)
+    console.log(builder.getAge())
+    console.log(builder.getName())
+    // Замыкание (Closure) в JavaScript — это функция, которая помнит и имеет доступ к переменным из своей внешней (родительской) области видимости, даже после того, как внешняя функция завершила свою работу.
+
+    // Каждый раз при создании функции в JS автоматически формируется замыкание.
+</script>
+</body>
+</html>
