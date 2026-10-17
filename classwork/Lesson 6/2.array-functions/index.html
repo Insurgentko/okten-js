@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    let arr = [1,2,4,5,6,7,8,123,421]
+
+    typeof arr // => object
+
+    Array.isArray(arr) // => true
+
+    arr.push(3333) // добавляет в конец, новый элемент
+
+    arr.pop() // вырезает последний элемент массива, при этом возвращает удалённый элемент
+
+    arr.unshift(123) // добавляет в начало массива элемент
+
+    arr.shift() // удаляет с начала элемент
+
+    let join = arr.join(';') // => соединяет между собой элементы массива в стрингу делая их одной общей строкой
+
+    arr2 = [3.1,4.6]
+    arr.concat(arr2) // обьекдиняет два массива ставя тот что в аргументе в конце
+
+    arr2.reverse() // возвращает развёрнутый массив
+
+    arr.slice(0,4) // => вырезает указанные элементы возвращает нвоый массив, 0-1-2-3 индексы вызераются
+
+    arr.splice(0,3) // c 0 индекса удаляется 3 элемента в этом же массиве и сохраняет изменённые данные в этом массиве
+
+    arr.splice(arr.indexOf(1),1) // удаление конкретного элемента
+
+    arr.includes(421) // проверяет наличие того или иного элемента в массиве возвращает boolean
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+//    function filter(arr,predicate){
+//        let exitArr = [];
+//        if (predicate === 'хочу парні'){
+//            for(const item of arr){
+//                if(item % 2 === 0){
+//                    exitArr.push(item)
+//                }
+//            }
+//            return exitArr;
+//        }
+//    }
+//    filter([11,44,2,6,234,523,5], 'хочу парні')
+//    filter([11,44,2,6,234,523,5], 'хочу непарні')
+    
+    
+    function filter(arr, callback){
+        let mass = [];
+        for (const arrElement of arr) {
+            if(callback(true)){
+                mass[mass.length] = arrElement;
+            }
+        }
+        return mass;
+    }
+
+    console.log(filter([11,44,2,6,234,523,5], item => {
+        return item%2===0;
+    }))
+</script>
+</body>
+</html>

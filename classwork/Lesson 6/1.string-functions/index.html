@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let str = 'Hello okten';
+    console.log(str[0]);
+    for (const strElem of str){
+        console.log(strElem);
+    }
+    let s = new String('asdsadf');
+    console.log(typeof s); // => object
+
+    str.concat('!!') // => Hello okten!!
+
+    str.toUpperCase() // возвращает новый обьект с аппер кейс
+
+    str.startsWith('hel') // проверяет начинается ли моя строка на указанную строку => true
+
+    str.endsWith('ten') // => true так же как и стартс виз
+
+    str.substring(0,7)
+    // 1 аргумент указывает с какого, 2 по какой номер массива "строки", мы хотим вырезать, 7-ое число не включительно то есть 1-6 => Hello o
+
+    str.indexOf('o') // идёт слева на право возвращает индекс указанного элемента
+
+    str.lastIndexOf('o') // то жде самое но справа на лево
+
+    str.indexOf('o',5) // начинает поиск с указанного индекса
+
+    str.charAt(8) // возвращает символ в указанном индексе
+
+    str.replace('i','!') // меняет первый слева на право символ
+
+    str.replaceAll('i', '!!!!') // меняет все сходства
+
+    str.split(' '); // возвращает стрингу в виде массива со стрингами по разделителю => [Hello, okten]
+
+</script>
+</body>
+</html>

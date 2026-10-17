@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
+    users.forEach(function (value, index, array){
+        if (value.name === 'vasya'){
+            value.name = 'nevasya';
+        }
+        console.log(value)
+    });
+    users.forEach(value => {if (value.name === 'vasya'){
+            value.name = 'nevasya';
+        }
+        console.log(value)}
+    );
+    users.filter(value => value.age > 30); //возвращает новый массив
+
+    users.map((value,index) => { // возвращает массив изменённых пользователей
+        return {
+            name : value.name,
+            age : value.age,
+            status : value.status,
+            id : index+1
+        }
+    });
+    users.map((value,index) => {
+        return {...value,id : index+1} // rest arg = все аргументы value + id
+    });
+
+    users.find(value => value.name === 'max')
+    // возвращает булеан есть ли указанный обьект, находит самый первый обьект, после него возвращает булеан
+    users.every(value => value.status === false)
+    // проверяет все обьекты, если хотя бы один фолс, то возвращает фолс, если все тру, то вернёт тру
+    users.some(value => value.status === true)
+    // так же проверяет все обьекты, если хотя бы один возвращает тру, то функция вернёт тру
+
+    let sort = users.sort((user1,user2) => {
+       return user1.age - user2.age;
+    });
+    // сортирует обьект от меньшего значения к большему например как тут по возрасту, если в обратном порядке то нужно поменять юзеров местами
+    console.log(sort);
+
+    users.reduce((accumulator,user) => {
+        if(user.status === true){
+            accumulator.statT.push(user)
+        }else{
+            accumulator.statF.push(user)
+        }
+        return accumulator;
+    },{statT:[], statF: []} );
+
+    // это «собиратель» или «агрегатор». Он берёт массив элементов и сжимает (сводит) его в один финальный результат (это может быть число, строка, новый объект или массив).
+
+
+    // колбек состоит из трёх частей
+    //     element
+    // The current element being processed in the array.
+    //     index
+    // The index of the current element being processed in the array.
+    //     array
+    // The array forEach() was called upon.
+</script>
+</body>
+</html>
