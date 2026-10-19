@@ -9,66 +9,24 @@
 </head>
 <body>
 <script>
-    function cardDeckGenerator() {
-        const cardSuits = [
-            {name: `spade`, color: `black`},
-            {name: `diamond`, color: `red`},
-            {name: `heart`, color: `red`},
-            {name: `clubs`, color: `black`}
-        ];
-        const values = [`ace`, `jack`, `queen`, `king`];
-        let cardDeck = [];
-        for (const suit of cardSuits) {
-            for (let i = 6; i <= 10; i++) {
-                cardDeck.push({
-                    name: suit.name,
-                    value: i,
-                    color: suit.color
-                });
-            }
-            for (const value of values){
-                cardDeck.push({
-                    name: suit.name,
-                    value: value,
-                    color: suit.color
-                });
-            }
+    //forEach
+    Array.prototype.forAll = function (callback){
+        for (const value of this){
+            callback(value);
         }
-        return cardDeck;
     }
 
-    let cardDeck = cardDeckGenerator();
-    console.log(cardDeck)
 
-    console.log(cardDeck.find(card => card.name === `spade` && card.value === `ace`));
-    // якщо завдання саме знайти підтвердження що така карта взагалі в колоді є і отримати return boolean. якщо треба отримати саме цю карту як об`єкт в return, тоді через filter, бо він поверне массив в котрому лежить одна ця карта.
-
-    console.log(cardDeck.filter(card => card.value === 6));
-
-    console.log(cardDeck.filter(card => card.color === `red`));
-
-    console.log(cardDeck.filter(card => card.name === `diamond`));
-
-    console.log(cardDeck.filter(card => card.name === `clubs` && card.value >= `9`));
-    // по аскі коду порівняння що б виводилися королі тузи і т.д.
-
-    cardDeck.reduce((accumulator, card) => {
-        switch (card){
-            case card.name === `spade`:
-                accumulator.spades.push(card);
-                break;
-            case card.name === `diamond`:
-                accumulator.diamonds.push(card);
-                break;
-            case card.name === `heart`:
-                accumulator.hearts.push(card);
-                break;
-            case card.name === `club`:
-                accumulator.clubs.push(card);
-                break;
+    // filter
+    Array.prototype.filtracionale = function (callback){
+        let filteredArray = [];
+        for (const value of this){
+            if (callback(value) === true){
+                filteredArray.push(value);
+            }
         }
-    }, {spades:[], diamonds:[], hearts:[],clubs:[] })
-
+        return filteredArray;
+    }
 
 </script>
 </body>
