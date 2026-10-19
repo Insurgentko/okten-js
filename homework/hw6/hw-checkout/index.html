@@ -49,7 +49,7 @@
 
     console.log(cardDeck.filter(card => card.name === `diamond`));
 
-    console.log(cardDeck.filter(card => card.name === `clubs` && card.value >= 9 || card.name === `clubs` && card.value >= 'a'));
+    console.log(cardDeck.filter(card => card.name === `clubs` && (card.value >= 9 || typeof card.value === 'string')));
 
     console.log(cardDeck.reduce((accumulator, card) => {
         switch (card.name) {
