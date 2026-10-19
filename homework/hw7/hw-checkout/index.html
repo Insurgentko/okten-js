@@ -10,24 +10,23 @@
 <body>
 <script>
     //forEach
-    Array.prototype.forAll = function (callback){
-        for (const value of this){
-            callback(value);
+    Array.prototype.forAll = function (callback) {
+        for (let i = 0; i < this.length; i++) {
+            callback(this[i], i, this);
         }
     }
 
 
     // filter
-    Array.prototype.filtracionale = function (callback){
+    Array.prototype.filtracionale = function (callback) {
         let filteredArray = [];
-        for (const value of this){
-            if (callback(value) === true){
-                filteredArray.push(value);
+        for (let i = 0; i < this.length; i++) {
+            if (callback(this[i], i, this) === true) {
+                filteredArray.push(this[i]);
             }
         }
         return filteredArray;
     }
-
 </script>
 </body>
 </html>
