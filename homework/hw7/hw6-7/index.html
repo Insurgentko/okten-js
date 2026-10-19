@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // – створити клас/функцію конструктор попелюшка з полями ім’я, вік, розмір ноги. Створити масив з 10 попелюшок.
+    //
+    //     Створити об’єкт класу “принц” за допомоги класу який має поля ім’я, вік, туфелька яку він знайшов.
+    //
+    //     За допомоги циклу знайти, яка попелюшка повинна бути з принцом.
+    //
+    // ! Додатково, знайти необхідну попелюшку за допомогою функції масиву find та відповідного колбеку
+    //
+
+    class Cinderella{
+
+        constructor(name, age, legSize) {
+            this.name = name;
+            this.age = age;
+            this.legSize = legSize;
+        }
+    }
+    class Prince{
+
+        constructor(name, age, shoeSize) {
+            this.name = name;
+            this.age = age;
+            this.shoeSize = shoeSize;
+        }
+    }
+
+    let cinderellasArray = [
+        new Cinderella('Mulan',56,42),
+        new Cinderella('Cinderella',19,31),
+        new Cinderella('Ariel',22,0),
+        new Cinderella('Jasmine',26,35),
+        new Cinderella('Rapunzel',21,33),
+        new Cinderella('Moana',15,23),
+        new Cinderella('Snow White',25,34),
+        new Cinderella('Belle',26,38),
+        new Cinderella('Aurora',21,32),
+        new Cinderella('Tiana',18,29),
+    ]
+    let prince = new Prince('Vovan', 33, 31);
+
+    let theRealCinderella = null;
+
+    for (const cinderella of cinderellasArray) {
+        if (prince.shoeSize === cinderella.legSize){
+            console.log(`Наша попелюшка - ${cinderella.name}! Завтра свадьба!`);
+            theRealCinderella = cinderella;
+            break;
+        }
+    }
+    if (theRealCinderella===null){
+        console.log('Реальної попелюшки серед цих принцес не було :(')
+    }
+
+    theRealCinderella = cinderellasArray.find(cinderella => cinderella.legSize === prince.shoeSize)
+
+
+</script>
+</body>
+</html>

@@ -9,21 +9,12 @@
 <body>
 <script src="arrays.js"></script>
 <script>
-    function sassFinder(coursesArray) {
-        let sassCourses = []
-        sassCourses.push(coursesArray.filter(course => course.modules.some(value => value === `sass`)))
-        return sassCourses;
+    function courseFinder(coursesArray, module) {
+        return coursesArray.filter(course => course.modules.includes(module));
     }
 
-    console.log(sassFinder(coursesArray))
-
-    function dockerFinder(coursesArray) {
-        let dockerCourses = []
-        dockerCourses.push(coursesArray.filter(course => course.modules.some(value => value === `docker`)))
-        return dockerCourses
-    }
-
-    console.log(dockerFinder(coursesArray))
+    console.log(courseFinder(coursesArray,'docker'))
+    console.log(courseFinder(coursesArray,'sass'))
 </script>
 </body>
 </html>

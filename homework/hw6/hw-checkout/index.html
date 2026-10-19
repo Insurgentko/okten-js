@@ -41,7 +41,7 @@
     console.log(cardDeck)
 
     console.log(cardDeck.find(card => card.name === `spade` && card.value === `ace`));
-    // якщо завдання саме знайти підтвердження що така карта взагалі в колоді є і отримати return boolean. якщо треба отримати саме цю карту як об`єкт в return, тоді через filter, бо він поверне массив в котрому лежить одна ця карта.
+    // find повертає об'єкт котрий знаходить
 
     console.log(cardDeck.filter(card => card.value === 6));
 
@@ -49,25 +49,25 @@
 
     console.log(cardDeck.filter(card => card.name === `diamond`));
 
-    console.log(cardDeck.filter(card => card.name === `clubs` && card.value >= `9`));
-    // по аскі коду порівняння що б виводилися королі тузи і т.д.
+    console.log(cardDeck.filter(card => card.name === `clubs` && card.value >= 9 || card.name === `clubs` && card.value >= 'a'));
 
-    cardDeck.reduce((accumulator, card) => {
-        switch (card){
-            case card.name === `spade`:
+    console.log(cardDeck.reduce((accumulator, card) => {
+        switch (card.name) {
+            case `spade`:
                 accumulator.spades.push(card);
                 break;
-            case card.name === `diamond`:
+            case `diamond`:
                 accumulator.diamonds.push(card);
                 break;
-            case card.name === `heart`:
+            case `heart`:
                 accumulator.hearts.push(card);
                 break;
-            case card.name === `club`:
+            case `clubs`:
                 accumulator.clubs.push(card);
                 break;
         }
-    }, {spades:[], diamonds:[], hearts:[],clubs:[] })
+        return accumulator;
+    }, {spades: [], diamonds: [], hearts: [], clubs: []}));
 
 
 </script>

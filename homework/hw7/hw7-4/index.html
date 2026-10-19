@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    function Client(id, name, surname, email, phone, order){
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+        this.order = order;
+    }
+
+    let clientArr = [
+        new Client(1,'asd','qwe','@gmail','+39',['jabko','mleko','jaiko']),
+        new Client(1,'asd','qwe','@gmail','+39',['jabko','mleko','jezhik']),
+        new Client(1,'asd','qwe','@gmail','+39',['jabko','mleko','hleb','pomidori']),
+        new Client(1,'asd','qwe','@gmail','+39',['jabko','mleko']),
+        new Client(1,'asd','qwe','@gmail','+39',['jabko','mleko','kabanosi','priprava','zamachav']),
+        new Client(1,'asd','qwe','@gmail','+39',['jabko','mleko','lovare','anchous','asdsad','asdasd']),
+        new Client(1,'asd','qwe','@gmail','+39',['jabko','mleko','123','qweqrqwr','ytetryetry','qrweerqw','weqewqewq']),
+        new Client(1,'asd','qwe','@gmail','+39',['jabko','mleko','32321']),
+        new Client(1,'asd','qwe','@gmail','+39',['jabko','mleko']),
+        new Client(1,'asd','qwe','@gmail','+39',['jabko','mleko']),
+    ];
+    clientArr = clientArr.sort((a,b) => a.order.length-b.order.length);
+    console.log(clientArr)
+</script>
+</body>
+</html>

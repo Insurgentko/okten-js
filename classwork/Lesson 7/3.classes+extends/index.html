@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+
+//    class User {
+//
+//        constructor(username, age) {
+//            this.username = username;
+//            this.age = age;
+//        }
+//
+//        // /*static*/ greeting(){
+//        //     return `hello my name is ${this.name}`
+//        // }
+//
+//        work(){
+//            console.log('work in process...')
+//        }
+//
+//    }
+//
+//    let user = new User('andrey', 322)
+//
+//    class Customer extends User{
+//
+//
+//        constructor(username, age, password) {
+//            super(username, age);
+//            this.password = password;
+//        }
+//
+//        work() {
+//            super.work();
+//        }
+//    }
+//
+//    console.log(Customer.work());
+
+
+    function User(name,age){
+        this.name = name;
+        this.age = age;
+    }
+
+    function Customer(name,age,password){
+        User.apply(this, arguments)
+        this.password = password;
+    }
+
+console.log(new Customer('asdf', 2323, 'qwerty'));
+
+</script>
+</body>
+</html>

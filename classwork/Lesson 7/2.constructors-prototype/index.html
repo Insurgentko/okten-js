@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    function User(name,age){
+        this.name = name;
+        this.age = age;
+    }
+
+</script>
+<script>
+    // User.prototype.greeting = function (){
+    //     return `hello my name is ${this.name}`
+    // }
+    //  prototype (прототип) — это специальный объект, который есть у функций-конструкторов (или классов). В него складывают методы, чтобы не дублировать их в памяти для каждого созданного экземпляра.
+    // let user = new User('vasya',23);
+    // console.log(user.greeting());
+
+
+    let user = new User('vasya',55);
+    user.greeting = function (){
+        return `${msg} hi! ${this.name}`;
+    };
+
+    let user2 = new User('sadfadsf',99);
+
+    // console.log(user.greeting.apply(user2, ['...rest',' agrs', ' message']));
+
+    // apply() — ВЫЗЫВАЕТ функцию прямо сейчас
+    // Он подставляет контекст и передаёт аргументы функции в виде массива.
+
+
+    let greetingCopy = user.greeting.bind(user2, 'hello')
+    console.log(greetingCopy());
+    // bind() — Создаёт НОВУЮ функцию с привязанным this
+
+    // Он не вызывает функцию сразу, а возвращает её копию, запомнившую контекст.
+</script>
+</body>
+</html>
