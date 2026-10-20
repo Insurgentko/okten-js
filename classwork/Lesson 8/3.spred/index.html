@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    // let user = {
+    //     name: 'vasya',
+    //     age: 123
+    // }
+    // передалась ссылка, один обьект, две ссылки на один обьект
+    // let user2 = user;
+
+    let user = {
+        name: 'vasya',
+        age: 123
+    }
+    let userCopy = {...user} // копирует сам обьект и создаёт новую ячейку в памяти, как результат разные ссылки на два разных обьекта
+
+    let nums = [11,455,22]
+    let nums2 = [...nums];
+    console.log(nums === nums2);
+
+</script>
+</body>
+</html>

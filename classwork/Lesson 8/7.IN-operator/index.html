@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    const obj = {
+        name : 'vasya'
+    }
+
+    if(obj.name){
+        console.log('suschestvuyet')
+    }
+
+    console.log(!!obj.age) // создаётся заглушка которая содержит не существующее значение, но после проверки уже возвращает undefined
+
+    console.log('name' in obj);
+    console.log('age' in obj); // быстрая проверка на то есть ли поле в обьекте
+
+    const sadf = Object.create(obj);
+    console.log('name' in sadf); // работает даже с прототипами
+
+    const obj2 = {
+        a: false,
+        b: 0,
+        c: "",
+        d: null,
+        e: undefined
+    }
+
+    if(obj2.a){
+        console.log('a'); // данные фолсоподобные поэтому возвращает проверка false
+    }
+
+    if(a in obj2){
+        console.log('a exist')
+    }
+</script>
+</body>
+</html>

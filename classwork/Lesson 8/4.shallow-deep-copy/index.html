@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+        let user = {
+            name:'vasya',
+            skills: ['html','js'],
+            foo(){
+
+            }
+        }
+
+        let userClone = {...user};
+        // создаёт поверхностную копию, которая создаёт новый обьект, но при этом условно массивы внутри копии ссылаются на один и тот же массив если таковой внутри есть
+        console.log(user===userClone); // false
+        console.log(user.skills===userClone.skills); // true
+
+        // let deepCopy = structuredClone()
+
+        console.log(JSON.stringify(user));
+
+        let userString = JSON.stringify(user); // convert to JSON
+        console.log(JSON.parse(userString));
+        // convert to obj возвращает абсолютно новый обьект полностью в другой ячейке с другими массивами
+        // в последствии парсинга удаляется весь функционал обьекта (все фукнции)
+
+
+        let assign = Object.assign({},user); // создаёт поверхностную копию
+        console.log(assign);
+
+</script>
+</body>
+</html>
