@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    let name = 'vasya' // название поля берётся из названия переменной
+    let age = 31;
+    let user = {
+        name,
+        age: age,
+        foo(){
+            console.log(this)
+        },
+        wife:{
+            name: 'andrey',
+            age: 55
+        }
+    };
+
+    console.log(user);
+    user.foo();
+
+
+
+
+    let user2 = {
+        name2 : 'vasya',
+        age2: 22,
+        foo(){
+            console.log(this)
+        }
+    }
+
+    let {age2,name2,foo} = user2;
+    // декомпозиция юзера, вытягиваем из него поля с возможностью их использования
+    console.log(name2)
+    foo()
+    let {name:user1Name, wife:{name:wifeName},wife:userWife} = user // поле можно переименовать во время декомпозиции
+    console.log(user1Name);
+
+
+    function asd ({name}){
+        console.log(name);
+    }
+
+    asd({a:123123,name:'asdasd'})
+    // при получения обьекта таки образом мы можем указать какое конкретное поле нужно из обьекта, что бы функция уже обрабатывала его
+
+
+
+    let numbers = [11,22,33];
+    let [a,b] = numbers; // a = 11, b = 22
+    let [c, ,d] = numbers; // c = 11, d = 33
+</script>
+</body>
+</html>

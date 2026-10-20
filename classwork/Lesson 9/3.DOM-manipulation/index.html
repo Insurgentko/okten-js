@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>before</h1>
+<div id="target" zxc="qwe" class="point">
+    <b>Lorem ipsum dolor sit amet</b>, consectetur adipisicing elit. <span>A adipisci aliquid dolore enim, facilis fugiat incidunt quam
+    quisquam vitae voluptatum?</span>
+</div>
+<div zxc="qwe" class="point">
+    <b>Lorem ipsum dolor sit amet</b>, consectetur adipisicing elit. <span>A adipisci aliquid dolore enim, facilis fugiat incidunt quam
+    quisquam vitae voluptatum?</span>
+</div>
+<div zxc="qwe" class="point">
+    <b>Lorem ipsum dolor sit amet</b>, consectetur adipisicing elit. <span>A adipisci aliquid dolore enim, facilis fugiat incidunt quam
+    quisquam vitae voluptatum?</span>
+</div>
+<h2>after</h2>
+<script>
+
+    let target = document.getElementById('target');
+    console.log(target.innerText);
+    // console.log(target.innerText = 'okten'); // меняет весь внутренний текст
+    target.style.background = 'silver'; // делает инлайн стиль (высокий приоритет)
+    console.log(target.classList);
+    target.classList.add('foo');
+    target.classList.add('bar');
+    console.log(target.classList);
+    console.log(target.classList.keys());
+    console.log(target.classList.item(0));
+    console.log(target.classList.contains('bar'));
+    console.log(target.classList.toggle('asd')); // если в теге есть такой класс, оно его удаляет и возвращает фолс
+    // а если нету оно его добавляет и возвращает тру
+    console.log(target.getAttribute('zxc'));
+    target.setAttribute('zxc', 'asdasdasd');
+    console.log(target.getAttribute('zxc'));
+    console.log(target.previousElementSibling);
+    console.log(target.nextElementSibling);
+    console.log(target.children); // HTML
+    console.log(target.childNodes); // Node
+    target.innerText = '<b>asdasdasd</b>' // теги тоже выводятся
+    target.innerHTML = '<b>asdasdasd</b>'
+    console.log(target.outerHTML); // возвращает весь элемент целиком, вместо с обёрткой
+
+
+    let collectionOfDiv = document.getElementsByClassName('point');
+
+    for (const collectionOfDivElement of collectionOfDiv) {
+        collectionOfDivElement.innerText = 'asdasdasd';
+        collectionOfDivElement.classList.add('qqqqqq')
+    }
+</script>
+</body>
+</html>

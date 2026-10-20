@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function deepCopy(obj){
+        // когда мы уже вошли внутрь обьекта, натыкаемся на null, NaN, undefined мы просто возвращаем их в обьект, т.к. примитивы не имеют ссылок
+        if (obj === null || typeof obj !== 'object') {
+            return obj;
+        }
+        // внутри обьекта если мы натыкаемся на массив, мы его маппим в нашу копию, что бы внутренности массива не передавались по одному
+        if (Array.isArray(obj)) {
+            return obj.map(item => deepCopy(item));
+        }
+
+        // при рекурсивном вызове, каждый раз создаётся новый обьект в который передаётся наше нужное значение
+        const copy = {};
+        for (const value in obj) {
+            // тут при окончании работы рекурсивной функции, мы возвращаем уже значение которое мы передали в "пустой" обьект, внутри рекурсивной функции
+            copy[value] = deepCopy(obj[value]);
+        }
+        // возвращает обьект во время рекурсии в "основную" функцию + возвращает результат
+        return copy;
+    }
+
+
+    let user = {
+        name:'vasya',
+        status: undefined,
+        age: null,
+        yearOfGraduation: NaN,
+        skills: ['html','js'],
+        foo(){
+            console.log('hello');
+        }
+    }
+
+    user2 = deepCopy(user)
+    console.log(user2)
+    console.log(user === user2);
+    console.log(user.skills === user2.skills);
+    console.log(user.status === user2.status);
+
+    user2.foo()
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+<script src="arrays.js"></script>
+<script>
+    for (const course of coursesArray) {
+        let divTitle = document.createElement('div');
+        let divDuration = document.createElement('div');
+        let pMonthDuration = document.createElement('p');
+        let pHoursDuration = document.createElement('p');
+        let listOfModules = document.createElement('ul');
+
+
+        divTitle.innerText = course.title;
+
+        divDuration.style.display = ('flex')
+        divDuration.style.gap = ('20px')
+        pMonthDuration.innerText = course.monthDuration;
+        pHoursDuration.innerText = course.hourDuration;
+        divDuration.append(pMonthDuration, pHoursDuration);
+        // по тз на картинці вони поруч, а не як окремі блоки, тому було прийнято таке рішення, ще можна було через span,
+        // але параграф мені подобається більше
+
+
+        for (let value of course.modules){
+            let module = document.createElement('li');
+            module.innerText = value;
+            listOfModules.appendChild(module);
+        }
+
+        document.body.append(divTitle, divDuration, listOfModules)
+    }
+</script>
+</body>
+</html>

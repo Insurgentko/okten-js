@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    console.log({})
+    console.log({}.__proto__);
+
+    let base = {
+        id:1,
+        name:'kokos'
+    }
+
+    let copy = Object.create(base)
+    console.log(copy);
+    console.log(copy.id);
+    console.log(copy.name);
+    console.log(base);
+    copy.id = 15000;
+    console.log(copy.hasOwnProperty('id'));
+    console.log(copy.id); // появляется собственное свойство айди, но при этом у прототипа она не изменная
+
+    // bollean является ли тот или иное поле собственностью указанного обьекта на котором вызвали функцию
+
+    let obj = {};
+    obj.__proto__ = base;
+    console.log(obj)
+</script>
+</body>
+</html>

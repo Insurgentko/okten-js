@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>DOM TITLE</h1>
+<ul class="menu" id="list-1">
+    <li>item1 1</li>
+    <li>item1 2</li>
+    <li>item1 3</li>
+    <li>item1 4</li>
+    <li>item1 5</li>
+</ul>
+<ul class="menu" id="list-2">
+    <li>item2 1</li>
+    <li>item2 2</li>
+    <li>item2 3</li>
+    <li>item2 4</li>
+    <li>item2 5</li>
+</ul>
+<script>
+    // DOM - Document Object Model
+    //
+    // console.log(document);
+    // console.log(document.head);
+    // console.log(document.head.innerHTML);
+    // console.log(document.head.children) // выводит мета и название, каждый тег, как обьект в массиве
+    // console.log(document.body);
+    // console.log(document.body.innerHTML);
+
+
+    // ID
+    console.log(document.getElementById('list-1'));
+
+    let menuCollection = document.getElementsByClassName('menu');
+    console.log(menuCollection); // даже если элемент класса всего один,
+    for(const menuCollectionElement of menuCollection){
+        console.log(menuCollectionElement)
+    }
+    // он запаковывается в псевдомассив и взаимодейтсвие с ними возможно только через итерацию или перебор
+
+    // TAG
+
+    let liTagList = document.getElementsByTagName('li');
+    console.log(liTagList);
+
+    let list1 = document.getElementById('list-1');
+    console.log(list1.getElementsByTagName('li')); // получаем лишки конкретно из первого листа
+
+
+    // QUERRY SELECTOR
+
+    console.log(document.querySelector('body .menu')); // возвращает только первый элемент
+    console.log(document.querySelectorAll('body ul')); // возвращает NodeList обьектов
+    // узел/Node - штмль елемент это потомок интерфейса Node
+    let nodeListOf = document.querySelectorAll('.menu:nth-child(2)>li'); // возвращает лишки второй юлки
+
+    for (const node of nodeListOf){
+        console.log(node);
+    }
+</script>
+</body>
+</html>
