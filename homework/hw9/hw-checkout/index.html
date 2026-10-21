@@ -11,6 +11,8 @@
 <script src="arrays.js"></script>
 <script>
     for (const course of coursesArray) {
+        let wrapper = document.createElement('div');
+        wrapper.classList.add('wrapper')
         let divTitle = document.createElement('div');
         let divDuration = document.createElement('div');
         let pMonthDuration = document.createElement('p');
@@ -29,13 +31,14 @@
         // але параграф мені подобається більше
 
 
-        for (let value of course.modules){
+        for (let value of course.modules) {
             let module = document.createElement('li');
             module.innerText = value;
             listOfModules.appendChild(module);
         }
 
-        document.body.append(divTitle, divDuration, listOfModules)
+        document.body.appendChild(wrapper)
+        wrapper.append(divTitle, divDuration, listOfModules)
     }
 </script>
 </body>
