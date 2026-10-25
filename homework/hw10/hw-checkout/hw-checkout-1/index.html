@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+<div id="price"></div>
+<script>
+
+    const priceDiv = document.getElementById('price');
+
+    let price = localStorage.getItem('price');
+    let lastChange = localStorage.getItem('lastChange');
+
+    if (price === null || lastChange === null) {
+        price = 100;
+        localStorage.setItem('price', price);
+        localStorage.setItem('lastChange', Date.now());
+    } else {
+        price = +price;
+        lastChange = +lastChange;
+
+        if (Date.now() - lastChange > 10*1000) {
+            price += 10;
+            localStorage.setItem('price', price);
+            localStorage.setItem('lastChange', Date.now());
+        }
+    }
+
+    priceDiv.innerText = price + 'грн';
+
+</script>
+</body>
+</html>

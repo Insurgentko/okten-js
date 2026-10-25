@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input id="age-input" type="text">
+<button id="btn">Check Age</button>
+<p id="errorText"></p>
+<script>
+
+    let inputAge = document.getElementById('age-input');
+    let checkAgeButton = document.getElementById('btn');
+    let error = document.getElementById('errorText');
+
+    checkAgeButton.addEventListener('click', function (){
+        if (inputAge.value < 18 || !inputAge.value){
+            error.innerText = 'Vam nema 18'
+            error.style.color ='red';
+        }else{
+            error.innerText = 'Vse vvedeno virno!'
+            error.style.color ='green';
+        }
+    })
+
+</script>
+</body>
+</html>

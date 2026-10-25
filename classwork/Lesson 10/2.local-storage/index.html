@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+
+<script>
+
+    //    localStorage.setItem('asd','qwe') // закидывает предмет в локальное хранилище с ключём-значение
+    //    let item = localStorage.getItem('asd')
+    //    localStorage.clear()
+    //
+    //
+    //    localStorage.setItem('user',JSON.stringify({id:4,name:'bebra'}))
+    //    let userJSON = localStorage.getItem('user');
+    //    console.log(userJSON);
+    //    let user = JSON.parse(userJSON);
+    //    user.age = 31;
+    //    userJSON = JSON.stringify(user);
+    //    localStorage.setItem('user', userJSON)
+    // //    localStorage.clear()
+        let users = [
+            {name: 'vasya', age: 31, status: false},
+            {name: 'petya', age: 30, status: true},
+            {name: 'kolya', age: 29, status: true},
+            {name: 'olya', age: 28, status: false},
+            {name: 'max', age: 30, status: true},
+            {name: 'anya', age: 31, status: false},
+            {name: 'oleg', age: 28, status: false},
+            {name: 'andrey', age: 29, status: true},
+            {name: 'masha', age: 30, status: true},
+            {name: 'olya', age: 31, status: false},
+            {name: 'max', age: 31, status: true}
+        ];
+
+        localStorage.setItem('users',JSON.stringify(users));
+    let usersJSON = localStorage.getItem('users');
+    console.log(usersJSON);
+    let users1 = JSON.parse(usersJSON);
+    console.log(users1);
+    users1.push({});
+    console.log(users1);
+    localStorage.setItem('users', JSON.stringify(users1));
+
+</script>
+</body>
+</html>

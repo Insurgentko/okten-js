@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input id="rows" type="number" placeholder="Count of rows">
+<input id="columns" type="number" placeholder="Count of columns">
+<input id="content" type="text" placeholder="Content">
+<button>Create Grid</button>
+<script>
+    const numberOfRows = document.getElementById('rows')
+    const numberOfColumns = document.getElementById('columns')
+    const content = document.getElementById('content')
+    const btn = document.getElementsByTagName('button')[0]
+    const table = document.createElement('table');
+    btn.onclick = function (){
+        table.innerHTML = '';
+        for (let i = 0; i<(+numberOfRows.value); i++){
+            const row = document.createElement('tr');
+            for (let j = 0; j<(+numberOfColumns.value); j++){
+                const column = document.createElement('td');
+                column.innerText = content.value;
+                row.appendChild(column);
+            }
+            table.appendChild(row);
+        }
+        document.body.appendChild(table);
+    }
+
+</script>
+</body>
+</html>

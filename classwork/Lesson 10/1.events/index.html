@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #target{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+
+<div id="target"></div>
+
+<form id="f1"><input id="li1" name="username">
+<button>send</button></form>
+<script>
+
+    let target = document.getElementById('target');
+    target.onclick = function (event){
+        console.log('click');
+        console.log(event)
+    };
+    //
+    // target.onmousemove = function (event){
+    //     console.log('move')
+    //     console.log(event.clientX, event.clientY);
+    //     let r = event.clientX;
+    //     let g = event.clientX;
+    //     let b = event.clientY;
+    //     this.style.background = `rgb(${r},${g},${b})`
+    // }
+
+    // можно сделать два действия на один эвент если я хочу его добавить отдельно таким образом 1 переменная это название эвента, второе его функцонал
+    target.addEventListener('click', function (event){
+        console.log(event)
+    })
+
+    target.onmouseover = function (){ // навёлся на элемент
+        console.log('over')
+    }
+    target.onmouseleave = function (){ // убрал наводку с элемента
+        console.log('leave')
+    }
+
+    let li1 = document.getElementById('li1');
+    li1.oninput = function (){ // считывает информацию с инпута
+        console.log(this.value)
+        target.innerText = this.value
+    }
+
+    let f1 = document.forms.f1;
+
+    f1.onsubmit = function (event){ // ловим евент подтверждения формы
+        console.log('submit form');
+        event.preventDefault()
+        let user = {name:this.username.value};
+        console.log(user) // ls fetch api
+    }
+
+    window.onload = function (){
+        console.log('load')
+    }
+
+    document.onreadystatechange = function (){ // когда страничка загружается она имеет состояние interactive, когда загрузилась complete
+        if (document.readyState ==='interactive') {
+            document.body.innerText = 'loading start......'
+        }
+        if (document.readyState ==='complete') {
+            document.body.innerText = 'loading complete......'
+        }
+    }
+</script>
+</body>
+</html>

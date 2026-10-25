@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form name="form1">
+    <input name='name' type="text" placeholder="Your Name">
+    <input name='surname' type="text" placeholder="Your Surname">
+    <input name='age' type="text" placeholder="Your Age">
+    <button>Save Data</button>
+</form>
+<script>
+
+    const form1 = document.forms.form1;
+
+
+    form1.addEventListener('submit',function (event){
+        const userDiv = document.createElement('div')
+        event.preventDefault();
+        let user = {
+            name: form1.name.value,
+            surname: form1.surname.value,
+            age: form1.age.value
+        };
+        userDiv.innerText = JSON.stringify(user);
+        document.body.append(userDiv);
+    })
+
+</script>
+</body>
+</html>

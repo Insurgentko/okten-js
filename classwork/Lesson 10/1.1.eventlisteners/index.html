@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #target{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+
+<div id="target"></div>
+
+<form id="f1">
+    <input type="text" name="username">
+    <input type="text" name="username">
+    <input type="text" name="username">
+    <input type="text" name="username">
+    <input type="text" name="username">
+    <input type="text" name="username">
+<button type="submit" value="send">send</button>
+</form>
+<script>
+    // при нажатии на кнопку которая находится в форме происходит событие onsubmit
+    // когда мы работаем с ивентом онсабмит, мы можем работать с самой формой, вытягивая из неё её инпуты
+
+    let f1 = document.forms.f1;
+    f1.onsubmit = function (){
+        console.log(f1.username.value)
+    }
+
+
+</script>
+</body>
+</html>
